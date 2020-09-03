@@ -1,7 +1,8 @@
 <%= form_with  url: orders_path, id: 'charge-form', class: 'card-form',local: true do |f| %>
+  <%= render 'layouts/error_messages', model: @order %>
   <div class='form-wrap'>
     <%= f.label :price, "金額" %>
-    <%= f.text_field :price, class:"price", placeholder:"例)2000" %>
+    <%= f.text_field :price, class:"price", placeholder:"例)2000", maxlength:"16" %>
   </div>
   <div class='form-wrap'>
     <%= f.label :number,  "カード番号" %>
